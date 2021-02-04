@@ -1,5 +1,6 @@
 
-<div class="card card-prodcut col-12 col-md-6 col-lg-4">
+<div class="col-12 col-md-6 col-lg-4 px-3">
+  <div class="card card-prodcut">
   <%=image_tag @product.photo, class: "card-img-top", alt:@product.name%>
   <div class="card-body">
     <h5 class="card-title"><%=link_to @product.name, @product%></h5>
@@ -11,6 +12,6 @@
 </div>
 <a href="#" class="card-link">add to basket</a>
   <%=link_to "Show", @product, class:"card-link"%>
-
+</div>
   </div>
 </div>

@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all.with_attached_image
   end
   def show
     product
+    @products = Product.limit($ProductLimit-2)
   end
 
 private

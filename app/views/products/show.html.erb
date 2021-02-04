@@ -1,0 +1,26 @@
+<div class="product">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <%=image_tag @product.photo, title:@product.name, alt:@product.name, class:"image"%>
+    </div>
+    <div class="col-12 col-lg-6">
+
+  <h1 class="title">
+    <%=@product.name%>
+    </h1>
+      <p>
+        <%=@product.description%>
+    </p>
+    <div class="btn btn-success">
+        Add to cart
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="other-products mt-5">
+  <h2 class="text-center">Схожі товари</h2>
+  <div class="row">
+    <%=render ProductComponent.with_collection(@products)%>
+  </div>
+</section>

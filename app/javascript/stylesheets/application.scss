@@ -1,1 +1,22 @@
 @import "bootstrap";
+
+.container{
+  min-height: 89vh;
+}
+
+.card-prodcut{
+  min-height: 500px;
+}
+.product
+{
+  .title{
+    color: #001427
+  }
+  .description
+  {
+    color: #001427
+  }
+  img{
+    max-height: 50vh;
+  }
+}
