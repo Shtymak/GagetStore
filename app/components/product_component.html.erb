@@ -10,7 +10,7 @@
 <div class="">
   <%=@product.price%>
 </div>
-<a href="#" class="card-link">add to basket</a>
+<a href="#" class="card-link" onclick="add_to_cart(<%=@product.id%>)">Add to basket</a>
   <%=link_to "Show", @product, class:"card-link"%>
 </div>
   </div>

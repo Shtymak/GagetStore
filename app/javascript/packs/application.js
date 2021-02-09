@@ -13,3 +13,6 @@ Turbolinks.start()
 ActiveStorage.start()
 import "../stylesheets/application"
 import "bootstrap"
+
+import {add_to_cart} from "./cart"
+window.add_to_cart = add_to_cart
