@@ -1,16 +1,15 @@
-<div class="col-12 col-md-6 col-lg-4 px-3">
-  <div class="card card-prodcut">
-  <%=image_tag @product.photo, class: "card-img-top", alt:@product.name%>
-  <div class="card-body">
-    <h5 class="card-title"><%=link_to @product.name, @product%></h5>
-    <p class="card-text"><%=@product.description%></p>
-  </div>
-  <div class="card-body">
-<div class="">
-  <%=@product.price%>
-</div>
-<a href="#" class="card-link" onclick="add_to_cart(<%=@product.id%>)">Add to basket</a>
-  <%=link_to "Show", @product, class:"card-link"%>
-</div>
+<div class="col-12 col-md-6 col-lg-4 px-2">
+  <div class="card card-product">
+    <%= image_tag @product.product.image, class:"card-img-top", alt: @product.product.name%>
+    <div class="card-body">
+      <h5 class="card-title"><%=link_to @product.product.name, product_path(@product)%></h5>
+    </div>
+    <div class="card-body">
+      <div class="">
+        <%= @product.product.price%>
+      </div>
+      count: <%=@product.count%>
+      <%= link_to "Show", product_path(@product), class:"card-link" %>
+    </div>
   </div>
 </div>

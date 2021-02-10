@@ -10,10 +10,14 @@ before_action :product, only: [:show]
   end
 
   def add_to_cart
-        pp new_cart_product = current_cart.cart_products.build(product: product, count: 1)
-        new_cart_product.save
+    if cart_product = current_cart.cart_products.find_by(product_id: product.id)
+    cart_product.update(count: cart_product.count.to_i + 1)
+  else
+    new_cart_product = current_cart.cart_products.build(product: product, count: 1)
+    new_cart_product.save
+  end
     end
-    
+
     def cart
     @products = current_cart.cart_products
     respond_to do |format|
