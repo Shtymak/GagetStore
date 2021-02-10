@@ -11,7 +11,7 @@
       <p>
         <%=@product.description%>
     </p>
-    <div class="btn btn-success">
+    <div class="btn btn-success" onclick="add_to_cart(<%=@product.id%>)">
         Add to cart
       </div>
     </div>
