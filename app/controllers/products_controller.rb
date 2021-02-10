@@ -13,6 +13,14 @@ before_action :product, only: [:show]
         pp new_cart_product = current_cart.cart_products.build(product: product, count: 1)
         new_cart_product.save
     end
+    
+    def cart
+    @products = current_cart.cart_products
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 
 
 private

@@ -14,5 +14,6 @@ ActiveStorage.start()
 import "../stylesheets/application"
 import "bootstrap"
 
-import {add_to_cart} from "./cart"
+import {add_to_cart, show_cart} from "./cart"
 window.add_to_cart = add_to_cart
+window.show_cart = show_cart
