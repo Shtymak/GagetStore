@@ -2,7 +2,8 @@
   <div class="card card-product">
     <%= image_tag @product.product.image, class:"card-img-top", alt: @product.product.name%>
     <div class="card-body">
-      <h5 class="card-title"><%=link_to @product.product.name, product_path(@product)%></h5>
+      <%@nameLink = @product.product.name.first(7)+"..."%>
+      <h5 class="card-title"><%=link_to @nameLink, product_path(@product)%></h5>
     </div>
     <div class="card-body">
       <div class="">

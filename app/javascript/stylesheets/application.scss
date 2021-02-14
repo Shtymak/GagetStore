@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "toastr";
 
 .container{
   min-height: 89vh;
@@ -22,8 +23,7 @@
 }
 #cart {
   &:hover {
-    color: white;
-    border: 1px solid blue;
+    color: #2ec4b6;
     cursor: pointer;
   }
 }
