@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :products, only: %i[show index] do
       member do
         post :add_to_cart
+        delete :remove_from_cart
       end
 
       collection do

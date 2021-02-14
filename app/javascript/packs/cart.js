@@ -16,6 +16,21 @@ import toastr from "toastr";
       }
     })
   }
+  export function remove_from_cart(product_id) {
+    Rails.ajax({
+      type: "DELETE",
+      url: "/products/" + product_id + "/remove_from_cart",
+      success: function(response) {
+        var cart_product = document.getElementById('product_'+product_id)
+        cart_product.remove()
+        toastr.success("Товар видалено з кошика")
+      },
+      error: function(response) {
+        console.log("error")
+      }
+    })
+  }
+
 
   export function show_cart() {
     Rails.ajax({

@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <%=link_to "Products", products_path, class:"nav-link"%>
+          <%=link_to "Product", products_path, class:"nav-link"%>
         </li>
       </ul>
       <span class="navbar-text">
@@ -19,10 +19,17 @@
   </div>
 </nav>
 <div class="modal fade" id="cart_modal" tabindex="-1" aria-labelledby="cart_modalLabel" aria-hidden="true">
-  <div class="modal-content">
-    <div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-dialog">
+    <div class="modal-content modal-dialog-scrollable">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cart_modalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
       <div class="modal-body row" id="cart_body">
-
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

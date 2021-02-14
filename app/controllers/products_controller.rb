@@ -17,6 +17,24 @@ before_action :product, only: [:show]
     new_cart_product.save
   end
     end
+    def remove_from_cart
+    if cart_product = current_cart.cart_products.find_by(product_id: product.id)
+      cart_product.delete
+    end
+    respond_to do |format|
+      format.json { render json: '' }
+    end
+  end
+
+  def change_count_in_cart
+    if cart_product = current_cart.cart_products.find_by(product_id: product.id)
+      cart_product.update(count: params[:count])
+    end
+    respond_to do |format|
+      format.json { render json: '' }
+    end
+  end
+
 
     def cart
     @products = current_cart.cart_products
