@@ -1,0 +1,28 @@
+<%= simple_form_for @order do |f|%>
+<%= f.simple_fields_for :user do |u_f|%>
+<div class="card">
+  <div class="card-body">
+User params
+<%= u_f.input :name%>
+<%= u_f.input :phone%>
+<%= u_f.input :email%>
+</div>
+</div>
+<%end%>
+<%= f.input :delivery_type%>
+<%= f.input :payment_type%>
+
+<%= f.input :address%>
+<%= f.input :description,as: :text%>
+
+<%= f.simple_fields_for :order_products do |o_p_f|%>
+<%= o_p_f.object.product.name%>
+<%= image_tag o_p_f.object.product&.image %>
+
+<%= o_p_f.input :count%>
+<%= o_p_f.input :product_id, as: :hidden%>
+<%= o_p_f.input :price, as: :hidden%>
+<%end%>
+Ціна за все
+<%= f.submit :order %>
+<%end%>
