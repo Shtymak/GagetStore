@@ -47,3 +47,16 @@ import toastr from "toastr";
       }
     })
   }
+  export function cart_product_change_count(product_id,count){
+    Rails.ajax({
+      type: "PATCH",
+      url: "/products/" + product_id + "/change_count_in_cart",
+      data: "count="+count,
+      success: function(response) {
+        toastr.success("Зміна кількості товару")
+      },
+      error: function(response) {
+        console.log("error")
+      }
+    })
+  }
