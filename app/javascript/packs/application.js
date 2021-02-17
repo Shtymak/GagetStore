@@ -20,3 +20,20 @@ window.add_to_cart = add_to_cart
 window.show_cart = show_cart
 window.remove_from_cart= remove_from_cart
 window.cart_product_change_count= cart_product_change_count
+
+function delyvery_type_change(value) {
+  console.log(value);
+  if (value == "nova_poshta") {
+    var select_elements = document.getElementsByClassName("if_nova_poshta")
+  Array.prototype.filter.call(select_elements, function(element) {
+    return element.style.display = "block"
+  })
+  } else {
+
+    var select_elements = document.getElementsByClassName("if_nova_poshta")
+  Array.prototype.filter.call(select_elements, function(element) {
+    return element.style.display = "none"
+  })
+  }
+}
+window.delyvery_type_change = delyvery_type_change

@@ -2,6 +2,23 @@
 import Rails from "@rails/ujs"
 import * as bootstrap from 'bootstrap'
 import toastr from "toastr";
+toastr.options = {
+  "closeButton": false,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": true,
+  "positionClass": "toast-bottom-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "50",
+  "hideDuration": "1000",
+  "timeOut": "1000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
 
   export function add_to_cart(product_id) {
     Rails.ajax({
@@ -23,7 +40,7 @@ import toastr from "toastr";
       success: function(response) {
         var cart_product = document.getElementById('product_'+product_id)
         cart_product.remove()
-        toastr.success("Товар видалено з кошика")
+        toastr.warning("Товар видалено з кошика")
       },
       error: function(response) {
         console.log("error")
@@ -53,7 +70,7 @@ import toastr from "toastr";
       url: "/products/" + product_id + "/change_count_in_cart",
       data: "count="+count,
       success: function(response) {
-        toastr.success("Зміна кількості товару")
+        toastr.info("Зміна кількості товару")
       },
       error: function(response) {
         console.log("error")

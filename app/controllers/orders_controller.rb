@@ -9,7 +9,9 @@ class OrdersController < ApplicationController
         price: cart_product.product.price
       )
     end
+    @novaposhta_city = %i[Київ Львів Ужгород]
   end
+
 
   def create
     @order = Order.create(order_params)

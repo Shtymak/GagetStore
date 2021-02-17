@@ -1,2 +1,9 @@
-var cart_body = document.getElementById('cart_body')
-cart_body.innerHTML = '<%= j render  Cart::ProductComponent.with_collection(@products)%>'
+var cart_body =document.getElementById('cart_modal').getElementsByClassName('modal-body')[0]
+var order_button = document.getElementById('cart_modal').getElementsByClassName("btn-success")[0]
+  <% if @products.count > 0%>
+    cart_body.innerHTML = '<%=j render  Cart::ProductComponent.with_collection(@products)%>'
+    order_button.classList.remove("disabled")
+<%else%>
+    cart_body.innerHTML = "<p> Ваш кошик, пустий, оберіть товар з каталогу перед тим як замовити<p>"
+    order_button.classList.add("disabled")
+<%end%>
