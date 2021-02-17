@@ -11,4 +11,16 @@ class ApplicationController < ActionController::Base
                           cart
                         end
                       end
+private
+
+  def search
+    names = products.arel_table[:name]
+    descriptions = products.arel_table[:description]
+    @products = products.where(names.matches("%#{params[:search]}%")).or(products.where(descriptions.matches("%#{params[:search]}%")))
+  end
+
+  def products
+    @products ||= Product.all.with_attached_image
+  end
+
 end

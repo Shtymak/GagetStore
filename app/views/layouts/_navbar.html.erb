@@ -7,16 +7,18 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <%=link_to "Product", products_path, class:"nav-link"%>
-        </li>
-      </ul>
-      <span class="navbar-text">
-        <span id="cart" onclick="show_cart()">Bin</span>
-      </span>
-
-
-    </div>
+        <%=link_to "Products", products_path, class:"nav-link"%>
+      </li>
+    </ul>
+    <%= form_tag products_path, method: :get, class: "d-flex me-2" do %>
+    <%= text_field_tag( :search, params[:search], placeholder: "", class: "form-control me-2" ) %>
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  <% end %>
+    <span class="navbar-text">
+      <span id="cart" onclick="show_cart()">Bin</span>
+    </span>
   </div>
+</div>
 </nav>
 <div class="modal fade" id="cart_modal" tabindex="-1" aria-labelledby="cart_modalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
