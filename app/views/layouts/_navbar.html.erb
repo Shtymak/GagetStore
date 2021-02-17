@@ -19,20 +19,18 @@
   </div>
 </nav>
 <div class="modal fade" id="cart_modal" tabindex="-1" aria-labelledby="cart_modalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content modal-dialog-scrollable">
-      <div class="modal-header">
-        <h5 class="modal-title" id="cart_modalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body row" id="cart_body">
-        ...
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <%= link_to "Order", new_order_path,class:"btn btn-succsess"%>
-      </div>
+  <div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="cart_modalLabel">Ваш кошик</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body row" id="cart_body">
+      ...
+    </div>
+    <div class="modal-footer">
+      <%= link_to "Замовити", new_order_path,class:"btn btn-success"%>
     </div>
   </div>
+</div>
 </div>

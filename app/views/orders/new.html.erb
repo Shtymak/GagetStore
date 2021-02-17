@@ -9,8 +9,8 @@ User params
 </div>
 </div>
 <%end%>
-<%= f.input :delivery_type%>
-<%= f.input :payment_type%>
+<%= f.input :delivery_type, collection: Order.delivery_types.collect{|type, id|[type, type]}, include_blank: false%>
+<%= f.input :payment_type, collection: Order.payment_types.collect{|type, id|[type, type]}, include_blank: false%>
 
 <%= f.input :address%>
 <%= f.input :description,as: :text%>

@@ -1,4 +1,4 @@
-<div class="col-12 col-md-6 col-lg-4 px-2" id="product_<%=@product.product_id%>">
+<div class="col-12 col-md-6 col-lg-4 px-2 cart-product" id="product_<%=@product.product_id%>">
   <div class="card card-product">
     <%= image_tag @product.product.image, class:"card-img-top", alt: @product.product.name%>
     <div class="card-body">
@@ -9,9 +9,12 @@
       <div class="">
         <%= @product.product.price%>
       </div>
-      count: <%= number_field_tag :count,@product.count, onchange:"cart_product_change_count(#{@product.product_id},this.value)" %>
-      <%= link_to "Show", product_path(@product), class:"card-link" %>
-<div class="btn btn-danger card-link" onclick="remove_from_cart(<%=@product.product_id%>)">remove from card</div>
+      <div class="card-bottom-cart">
+
+        Count: <%= number_field_tag :count,@product.count, onchange:"cart_product_change_count(#{@product.product_id},this.value)", class:'card-bottom-cart', min:1 %>
+      </div>
+      <%= link_to "Show", product_path(@product)%>
+  <div class="btn remove-btn card-link" onclick="remove_from_cart(<%=@product.product_id%>)">remove from card</div>
   </div>
   </div>
 </div>

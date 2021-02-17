@@ -1,4 +1,5 @@
 class ApplicationJob < ActiveJob::Base
+  require "telegram/bot"
   # Automatically retry jobs that encountered a deadlock
   # retry_on ActiveRecord::Deadlocked
 

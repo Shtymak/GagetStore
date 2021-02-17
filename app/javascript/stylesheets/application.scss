@@ -1,12 +1,32 @@
 @import "bootstrap";
 @import "toastr";
-
+.remove-btn{
+	display:inline-block;
+	background:#e76f51;
+	font-size:2vh;
+	color:white;
+}
+.card-bottom-cart {
+  max-width: 15vh;
+}
 .container{
   min-height: 89vh;
 }
-
+.cart-size{
+  min-width: 20vh;
+}
 .card-prodcut{
-  min-height: 500px;
+  min-height: 89vh;
+}
+.cart-product{
+	img{
+    max-width: 40vh;
+  }
+  min-width: 30vh;
+	max-width: 38vh;
+  margin: 3vh;
+  padding: 3vh;
+	//color:red;
 }
 .product
 {
